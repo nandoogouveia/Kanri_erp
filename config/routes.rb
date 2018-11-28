@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  get 'inicio/inicio'
+  get 'cronograma/cronograma'
+  get 'painel/painel'
+  get 'calendario/calendario'
+  get 'chamado/chamado'
+  get 'financeiro/financeiro'
+  get 'index/index'
   #get 'dashboard/index'
   devise_for :gestors
   devise_for :admins
