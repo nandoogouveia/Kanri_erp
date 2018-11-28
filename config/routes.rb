@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :cronogramas
+  resources :painels
+  resources :chamados
+  resources :financeiros
   #get 'dashboard/index'
   devise_for :gestors
   devise_for :admins
