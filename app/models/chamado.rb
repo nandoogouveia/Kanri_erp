@@ -1,2 +1,0 @@
-class Chamado < ApplicationRecord
-end

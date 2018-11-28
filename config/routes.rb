@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
-  resources :cronogramas
-  resources :painels
-  resources :chamados
-  resources :financeiros
+  get 'inicio/inicio'
   #get 'dashboard/index'
   devise_for :gestors
   devise_for :admins
+
   
   root to: 'dashboard#index'
   

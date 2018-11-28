@@ -1,2 +1,0 @@
-class Financeiro < ApplicationRecord
-end

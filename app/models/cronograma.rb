@@ -1,2 +1,0 @@
-class Cronograma < ApplicationRecord
-end
