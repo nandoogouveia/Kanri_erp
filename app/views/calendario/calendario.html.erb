@@ -1,2 +1,382 @@
 <h1>Calendario#calendario</h1>
 <p>Find me in app/views/calendario/calendario.html.erb</p>
+<!DOCTYPE html>
+<html lang="pt-br">
+
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="author" content="Hau Nguyen">
+    <meta name="keywords" content="au theme template">
+
+    <!-- Title Page-->
+    <title>Calendário</title>
+
+    <!-- Fontfaces CSS-->
+    <link href="css/font-face.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS-->
+    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="css/theme.css" rel="stylesheet" media="all">
+	<style> 
+            .mes { 
+                font: bold 12px verdana; 
+                background: #f5f5f5; 
+                text-align: center; 
+                line-height: 25px;                
+                height: 25px; 
+                width: 240px; 
+            } 
+            .semana { 
+                font: bold 12px verdana; 
+                background: #f5f5f5; 
+                text-align: center; 
+                line-height: 25px;                            
+                height: 25px; 
+                width: 30px; 
+            } 
+            .dia { 
+                background: #f5f5f5; 
+                font: 12px verdana;                    
+                text-align: center; 
+                height: 25px; 
+                width: 30px; 
+            } 
+            .evento { 
+                position: relative; 
+                font: 9px verdana; 
+                color: #C30; 
+                right: -7px; 
+                top: -9px;                
+            } 
+        </style>
+</head>
+
+<body class="animsition">
+    
+            <nav class="navbar-mobile">
+                <div class="container-fluid">
+                    <ul class="navbar-mobile__list list-unstyled">
+                        <li>
+                            <a href="index.html">
+                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                        </li>
+						<li>
+                            <a href="financeiro.html">
+                                <i class="fas fa-university" aria-hidden="true"></i>Financeiro</a>
+                        </li>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-wrench"></i>Chamados</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="chamados.html">Painel de Chamados</a>
+                                </li>
+                                <li>
+                                    <a href="#">Cronograma</a>
+                                </li>  
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+			
+        </header>
+        <!-- END HEADER MOBILE-->
+
+        <!-- MENU SIDEBAR-->
+        <aside class="menu-sidebar d-none d-lg-block">
+            <div class="logo">
+                <a href="#">
+                    <img src="images/icon/logo.png" alt="LSTI" />
+                </a>
+            </div>
+            <div class="menu-sidebar__content js-scrollbar1">
+                <nav class="navbar-sidebar">
+                    
+					<ul class="list-unstyled navbar__list">
+                        
+						<li>
+                         	<a href="index.html">
+                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                        </li>
+						
+						<li>
+                            <a href="financeiro.html">
+                                <i class="fas fa-university"></i>Financeiro</a>
+                        </li>
+
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-wrench"></i>Chamados</a>
+							<ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li>
+                                    <a href="chamados.html">Painel de Chamados</a>
+                                </li>
+                                <li>
+                                    <a href="#">Cronograma</a>
+                                </li>                                
+                            </ul>
+                        </li>
+						
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        <!-- END MENU SIDEBAR-->
+
+        <!-- PAGE CONTAINER-->
+        <div class="page-container">
+            <!-- HEADER DESKTOP-->
+          <header class="header-desktop">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+						
+                        <div class="header-wrap">
+                            <form class="form-header" action="" method="POST">
+                                <input class="au-input au-input--xl" type="text" name="search" placeholder="Procurar por chamados &amp; clientes..." />
+                                <button class="au-btn--submit" type="submit">
+                                    <i class="zmdi zmdi-search"></i>
+                                </button>
+                            </form>
+                            <div class="header-button">
+                                <div class="noti-wrap">
+									
+                                    <div class="noti__item js-item-menu">
+                                        <i class="zmdi zmdi-email"></i>
+                                        <span class="quantity">2</span>
+                                        <div class="email-dropdown js-dropdown">
+                                            <div class="email__title">
+                                                <p>Você tem 2 novas Mensagens</p>
+                                            </div>
+                                            <div class="email__item">
+                                                <div class="image img-cir img-40">
+                                                    <img src="images/icon/avatar-09.jpg" alt="Chris Pratt" />
+                                                </div>
+                                                <div class="content">
+                                                    <p>Desenvolvimento de Novos Módulos</p>
+                                                    <span>Chris Pratt, Ontem</span>
+                                                </div>
+                                            </div>
+                                            <div class="email__item">
+                                                <div class="image img-cir img-40">
+                                                    <img src="images/icon/avatar-08.jpg" alt="Bradley Cooper" />
+                                                </div>
+                                                <div class="content">
+                                                    <p>Bem Vindo ao LSTI ERP!</p>
+                                                    <span>Bradley Cooper, 1 mês atrás</span>
+                                                </div>
+                                            </div>
+                                            <div class="email__footer">
+                                                <a href="#">Ver Todas as Mensagens</a>
+                                            </div>
+                                        </div>
+                                    </div>
+									
+                                    <div class="noti__item js-item-menu">
+                                        <i class="zmdi zmdi-notifications"></i>
+                                        <span class="quantity">3</span>
+                                        <div class="notifi-dropdown js-dropdown">
+                                            <div class="notifi__title">
+                                                <p>Você tem 3 novos chamados</p>
+                                            </div>
+                                            <div class="notifi__item">
+                                                <div class="bg-c3 img-cir img-40">
+                                                    <i class="zmdi zmdi-wifi-alt"></i>
+                                                </div>
+                                                <div class="content">
+                                                    <p>Intalação Projeto SDWan</p>
+													<p>Itaú Ag. 6419 - Vila Tupi PG</p>
+                                                    <span class="date"> 9 de novembro de 2018 </span>
+                                                </div>
+                                            </div>
+                                            <div class="notifi__item">
+                                                <div class="bg-c1 img-cir img-40">
+                                                    <i class="zmdi zmdi-money-box"></i>
+                                                </div>
+                                                <div class="content">
+                                                    <p>Intalação ATM</p>
+													<p>CEF Ag. 1233-5 - Marcílio Dias</p>
+                                                    <span class="date"> 22 de novembro de 2018 </span>
+                                                </div>
+                                            </div>
+                                            <div class="notifi__item">
+                                                <div class="bg-c2 img-cir img-40">
+                                                    <i class="zmdi zmdi-desktop-windows"></i>
+                                                </div>
+                                                <div class="content">
+                                                    <p>Intalação Projeto Nettop</p>
+													<p>Santander Ag. 1761 - Select Gonzaga</p>
+                                                    <span class="date"> 3 de dezembro de 2018 </span>
+                                                </div>
+                                            </div>
+                                            <div class="notifi__footer">
+                                                <a href="#">Ver Todos os Chamados</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="account-wrap">
+                                    <div class="account-item clearfix js-item-menu">
+                                        <div class="image">
+                                            <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                        </div>
+										
+                                        <div class="content">
+                                            <a class="js-acc-btn" href="#">Rudney Forti</a>
+                                        </div>
+										
+                                        <div class="account-dropdown js-dropdown">
+                                            <div class="info clearfix">
+                                                <div class="image">
+                                                    <a href="#">
+                                                        <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                                    </a>
+                                                </div>
+												<!-- DROP PERFIL -->
+                                                <div class="content">
+                                                    <h5 class="name">
+                                                        <a href="#">Rudney Forti</a>
+                                                    </h5>
+                                                    <span class="email">rudneyforti@hotmail.com</span>
+                                                </div>
+                                            </div>
+                                            <div class="account-dropdown__body">
+                                                <div class="account-dropdown__item">
+                                                    <a href="#">
+                                                        <i class="zmdi zmdi-account"></i>Conta</a>
+                                                </div>
+                                                <div class="account-dropdown__item">
+                                                    <a href="#">
+                                                        <i class="zmdi zmdi-settings"></i>Configuração</a>
+                                                </div>
+                                            </div>
+                                            <div class="account-dropdown__footer">
+                                                <a href="login.html">
+                                                    <i class="zmdi zmdi-power"></i>Sair</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- HEADER DESKTOP-->
+
+            <!-- MAIN CONTENT-->
+            <div class="main-content">
+				
+                <div class="section__content section__content--p30">
+					
+                    <div class="container-fluid">
+						<!-- Calendario ZIKA -->
+						<table> 
+            <caption class="mes">Fevereiro 2011</caption> 
+            <thead> 
+                <tr> 
+                    <td class="dia"><div class="semana">D</td> 
+                    <td class="dia"><div class="semana">S</td> 
+                    <td class="dia"><div class="semana">T</td> 
+                    <td class="dia"><div class="semana">Q</td> 
+                    <td class="dia"><div class="semana">Q</td> 
+                    <td class="dia"><div class="semana">S</td> 
+                    <td class="dia"><div class="semana">S</td> 
+                </tr> 
+            </thead> 
+            <tbody> 
+                <tr> 
+                    <td class="dia">1<span class="evento">2</span></td> 
+                    <td class="dia">2<span class="evento">5</span></td> 
+                    <td class="dia">3<span class="evento">3</span></td> 
+                    <td class="dia">4</td> 
+                    <td class="dia">5<span class="evento">1</span></td> 
+                    <td class="dia">6</td> 
+                    <td class="dia">7</td> 
+                </tr> 
+                <tr> 
+                    <td class="dia">8<span class="evento">2</span></td> 
+                    <td class="dia">9</td> 
+                    <td class="dia">10</td> 
+                    <td class="dia">11<span class="evento">5</span></td> 
+                    <td class="dia">12</td> 
+                    <td class="dia">13<span class="evento"></span></td> 
+                    <td class="dia">14</td> 
+                </tr>            
+                <tr> 
+                    <td class="dia">15<span class="evento">2</span></td> 
+                    <td class="dia">16</td> 
+                    <td class="dia">17</td> 
+                    <td class="dia">18<span class="evento">5</span></td> 
+                    <td class="dia">19</td> 
+                    <td class="dia">20<span class="evento"></span></td> 
+                    <td class="dia">21</td> 
+                </tr> 
+                <tr> 
+                    <td class="dia">22<span class="evento">2</span></td> 
+                    <td class="dia">23</td> 
+                    <td class="dia">24</td> 
+                    <td class="dia">25<span class="evento">5</span></td> 
+                    <td class="dia">26</td> 
+                    <td class="dia">27<span class="evento"></span></td> 
+                    <td class="dia">28</td> 
+                </tr> 
+            </tbody> 
+        </table> 
+						<!--------------------->
+					</div>
+                       
+                </div>
+      </div>
+            <!-- END MAIN CONTENT-->
+            <!-- END PAGE CONTAINER-->
+        </div>
+
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="vendor/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script src="vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <!-- Vendor JS       -->
+    <script src="vendor/slick/slick.min.js">
+    </script>
+    <script src="vendor/wow/wow.min.js"></script>
+    <script src="vendor/animsition/animsition.min.js"></script>
+    <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+    </script>
+    <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="vendor/counter-up/jquery.counterup.min.js">
+    </script>
+    <script src="vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="vendor/select2/select2.min.js">
+    </script>
+
+    <!-- Main JS-->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
+<!-- end document-->
