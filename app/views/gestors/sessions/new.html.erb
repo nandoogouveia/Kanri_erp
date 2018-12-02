@@ -1,4 +1,6 @@
-<h2>Log in - Gestor</h2>
+<h2>Área de login do gestor.</h2>
+
+<h3>Gestor</h3>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
@@ -15,14 +17,29 @@
     <div class="field">
       <%= f.check_box :remember_me %>
       <%= f.label :lembrar_me %>
-    </div>
+    </div><br>
+    
+    <%- if controller_name != 'sessions' %>
+  <%= link_to "Logar", new_session_path(resource_name) %><br />
+<% end -%>
+    
   <% end -%>
+  
+
   
   <%= render "gestors/shared/links" %>
 
-  <div class="actions">
+<p class="navbar-text pull-right">
+ <% if gestor_signed_in? %>
+   Logado como: <strong><%= current_user.email %></strong>.
+   <%= link_to 'Editar perfil', edit_gestor_registration_path, :class => 'navbar-link' %> |
+    <%= link_to "Logout", destroy_gestor_session_path, method: :delete, :class => 'navbar-link'  %>
+  <% else %>
+    <div class="actions">
     <%= f.submit "LOGAR" %>
   </div>
+  <% end %>
+
 <% end %>
 
 

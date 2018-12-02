@@ -1,4 +1,4 @@
-<h2>Log in - Administrador</h2>
+<h2>Área de login do administrador</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
@@ -20,9 +20,20 @@
 
   <%= render "admins/shared/links" %>
 
-  <div class="actions">
+ <p class="navbar-text pull-right">
+ <% if admin_signed_in? %>
+   Logado como: <strong><%= current_user.email %></strong>.
+   <%= link_to 'Editar perfil', edit_admin_registration_path, :class => 'navbar-link' %> |
+    <%= link_to "Logout", destroy_admin_session_path, method: :delete, :class => 'navbar-link'  %>
+  <% else %>
+    <%= link_to "Registrar-se", new_admin_registration_path, :class => 'navbar-link'  %>  |
+        <%= link_to "Registrar novo gestor", new_gestor_registration_path, :class => 'navbar-link'  %>
+
+    <div class="actions">
     <%= f.submit "LOGAR" %>
   </div>
+  <% end %>
+
 <% end %>
 
 

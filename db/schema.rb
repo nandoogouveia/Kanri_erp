@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_28_174240) do
+ActiveRecord::Schema.define(version: 2018_12_02_011021) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,24 +22,6 @@ ActiveRecord::Schema.define(version: 2018_11_28_174240) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
-  end
-
-  create_table "chamados", force: :cascade do |t|
-    t.string "called"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "cronogramas", force: :cascade do |t|
-    t.string "calendario"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "financeiros", force: :cascade do |t|
-    t.string "financial"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "gestors", force: :cascade do |t|
@@ -54,8 +36,11 @@ ActiveRecord::Schema.define(version: 2018_11_28_174240) do
     t.index ["reset_password_token"], name: "index_gestors_on_reset_password_token", unique: true
   end
 
-  create_table "painels", force: :cascade do |t|
-    t.string "painel"
+  create_table "logins", force: :cascade do |t|
+    t.string "email"
+    t.string "string"
+    t.string "senha"
+    t.string "number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
