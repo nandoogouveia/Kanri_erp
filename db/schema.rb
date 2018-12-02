@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2018_12_02_011021) do
+=======
+ActiveRecord::Schema.define(version: 2018_11_27_140123) do
+>>>>>>> 0dbb8fce0dcf21b76faaf8cda1e9275762c78af6
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -36,6 +40,7 @@ ActiveRecord::Schema.define(version: 2018_12_02_011021) do
     t.index ["reset_password_token"], name: "index_gestors_on_reset_password_token", unique: true
   end
 
+<<<<<<< HEAD
   create_table "logins", force: :cascade do |t|
     t.string "email"
     t.string "string"
@@ -45,4 +50,6 @@ ActiveRecord::Schema.define(version: 2018_12_02_011021) do
     t.datetime "updated_at", null: false
   end
 
+=======
+>>>>>>> 0dbb8fce0dcf21b76faaf8cda1e9275762c78af6
 end

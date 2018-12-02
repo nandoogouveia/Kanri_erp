@@ -1,0 +1,51 @@
+<p class="navbar-text pull-right">
+<% if gestor_signed_in? %>
+  Logado como: <strong><%= current_user.email %></strong>.
+  <%= link_to 'Editar perfil', edit_gestor_registration_path, :class => 'navbar-link' %> |
+  <%= link_to "Logout", destroy_gestor_session_path, method: :delete, :class => 'navbar-link'  %>
+<% else %>
+  <%= link_to "Registrar-se", new_gestor_registration_path, :class => 'navbar-link'  %> |
+  <%= link_to "Login", new_gestor_session_path, :class => 'navbar-link'  %>
+<% end %>
+
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+		<head>
+				<meta charset="utf-8">
+				<title>Kanri ERP</title>
+				
+                <%= csrf_meta_tags %>
+                <%= csp_meta_tag %>
+                <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+                <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+                
+		</head>
+		
+				
+		
+		<body>
+	
+			<h1>Kanri ERP</h1>
+			
+			
+			<%= image_tag 'icon/Logo.png' %>
+				
+				<h2>Acesso a aplicação...</h2>
+				
+				<p>O Kanri ERP é um sistema modular e personalizável de gestão de prestadoras de serviços.<br>
+				Nosso sistema tem o objetivo de aproximar o Fornecedor de Serviços, o Parceiro e os Colaboradores. <br>
+				Pelo Kanri ERP será possível Controlar Chamados, Estoque, Finanças e os Colaboradores.</p><br>
+			
+		
+                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit"> <%= link_to 'Acessar', new_gestor_session_path	 %>	 
+
+		</body>
+
+
+
+
+</html>
+
+
